@@ -1,0 +1,26 @@
+    <script>
+      var socket = io();
+
+      $(document).ready(function () {
+          $("#list-adv").change(function () {
+          var v = $(this).val();
+          $("#img-adv").attr("src", "../images/" +v);
+        });
+
+          $("#btnSend").click(function cb() {
+          var stt = $("#list-adv").val();
+          socket.emit('admin-send-data', stt);
+        });
+      });
+    </script>
+
+    <select id='list-adv'>
+      <option value="">--Chọn Mục Quảng Cáo!--</option>
+      {{# each arr}}
+        <option value="{{this.Img}}"> {{this.Img}}</option>
+      {{/each}}
+    </select>
+    <input type="button" id="btnSend" value="Send Advertisement" class="btn btn-primary" />
+    <div>
+      <img id="img-adv" src="" width= 500 />
+    </div>
