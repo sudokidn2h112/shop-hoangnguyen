@@ -18,14 +18,14 @@ var userRoutes = require('./routes/user');
 var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
-var port = process.env.PORT || 3000;
-server.listen(port, function (err) {
-  if(err){
-    console.log('Server start error: '+err);
-  }else {
-    console.log('Server is running at port: '+port);
-  }
-});
+// var port = process.env.PORT || 3000;
+// server.listen(port, function (err) {
+//   if(err){
+//     console.log('Server start error: '+err);
+//   }else {
+//     console.log('Server is running at port: '+port);
+//   }
+// });
 
 //set env vars
 // process.env.MONGOLAB_URI = process.env.MONGOLAB_URI || 'mongodb://localhost/shopping-cart';
